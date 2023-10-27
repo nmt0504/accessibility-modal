@@ -104,6 +104,10 @@ const Modal: FC<IProps> = ({ isOpen, title, content, onClose }) => {
   return (
     <section className="modal">
       <div
+        role="dialog"
+        aria-modal="true"
+        id="dialog1"
+        aria-labelledby="dialog1_label"
         ref={modalRef}
         onClick={(e) => e.stopPropagation()}
         className="modal-content"
@@ -114,7 +118,7 @@ const Modal: FC<IProps> = ({ isOpen, title, content, onClose }) => {
           </button>
         </div>
         <main className="modal-main-contents">
-          <h5 className="modal-title">{title}</h5>
+          <h5 id="dialog1_label" className="modal-title">{title}</h5>
           <hr />
           <div className="modal-text">{content}</div>
           <div className="modal-button">
